@@ -10,7 +10,7 @@ layers:
   - U
   - I
   - O
-  - {t: P, h: '3'}
+  - {t: P, h: SCROLL_1}
   - A
   - S
   - D
@@ -21,7 +21,7 @@ layers:
   - J
   - K
   - L
-  - {t: ., h: '5'}
+  - .
   - Z
   - X
   - C
@@ -42,7 +42,7 @@ layers:
   - {t: SPACE, h: '2'}
   - BACKSPACE
   - {t: ENTER, h: '1'}
-  - Sft+2
+  - '['
   '1':
   - '!'
   - '?'
@@ -54,8 +54,8 @@ layers:
   - END
   - Ctl+Sft+TAB
   - Ctl+TAB
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Sft+8
+  - Sft+9
   - '4'
   - '5'
   - '6'
@@ -65,8 +65,8 @@ layers:
   - RIGHT ARROW
   - Gui+LEFT ARROW
   - Gui+RIGHT ARROW
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Sft+6
+  - ''''
   - '7'
   - '8'
   - '9'
@@ -77,7 +77,7 @@ layers:
   - PAGE DOWN
   - Gui+UP ARROW
   - Gui+DOWN ARROW
-  - {t: ▽, type: trans}
+  - Sft+=
   - {t: ▽, type: trans}
   - '0'
   - {t: ▽, type: trans}
@@ -129,7 +129,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '3':
+  SCROLL_1:
   - {t: ▽, type: trans}
   - Ctl+Sft+TAB
   - PRINTSCREEN
@@ -172,7 +172,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '4':
+  BLUETOOTH:
   - BT CLR ALL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -236,7 +236,6 @@ layers:
   - '&mkp MB1'
   - '&mkp MB2'
   - '&mkp MB3'
-  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -258,7 +257,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  '6':
+  - {t: ▽, type: trans}
+  SCROLL_2:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -303,6 +303,6 @@ layers:
   - {t: ▽, type: trans}
 combos:
 - p: [27, 40]
-  k: '4'
+  k: BLUETOOTH
 - p: [0, 1]
   k: ESC
