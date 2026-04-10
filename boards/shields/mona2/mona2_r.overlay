@@ -70,7 +70,7 @@
 
 // 【AML】トラックボールを動かした時の基本動作
     input-processors = 
-        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+        <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
         <&zip_temp_layer 5 5000>;                    // AML発動（レイヤー5、5秒間）
 
     scroller {
@@ -91,5 +91,5 @@
     excluded-positions = <12 13 17 18 19>; 
     
     // キー入力直後の誤爆防止（150ms〜200msくらいがおすすめ）
-    require-prior-idle-ms = <150>;
+    require-prior-idle-ms = <120>;
 };
