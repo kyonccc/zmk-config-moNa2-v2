@@ -10,6 +10,13 @@
 #define MOUSE 5
 #define SCROLL 6
 
+#include <input/processors.dtsi>
+
+// マウスボタン（mkp）を押した時も、MOUSEレイヤー(5番)の維持時間を2秒にリセットする設定
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer MOUSE 10000>;
+};
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
