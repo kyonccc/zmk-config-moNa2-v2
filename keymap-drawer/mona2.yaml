@@ -131,8 +131,8 @@ layers:
   - {t: ▽, type: trans}
   SCROLL_1:
   - {t: ▽, type: trans}
-  - Ctl+Sft+TAB
   - {t: ▽, type: trans}
+  - Ctl+Sft+TAB
   - Ctl+TAB
   - {t: ▽, type: trans}
   - HOME
