@@ -25,13 +25,13 @@
         compatible = "zmk,combos";
 
         layer4_ESC {
-            bindings = <&lt 4 ESC>;
-            key-positions = <39 38>;
+            bindings = <&mo 4>;
+            key-positions = <27 40>;
         };
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
         };
     };
 
@@ -79,7 +79,7 @@
 &kp Q    &kp W         &kp E         &kp R           &kp T                                                               &kp Y        &kp U  &kp I      &kp O      &lt 3 P
 &kp A    &kp S         &kp D         &kp F           &kp G                                       &kp PRINTSCREEN         &kp H        &kp J  &kp K      &kp L      &lt 5 PERIOD
 &kp Z    &kp X         &kp C         &kp V           &kp B             &to_layer_0 LANGUAGE_2    &to_layer_0 LANGUAGE_1  &kp N        &kp M  &kp COMMA  &kp MINUS  &kp SLASH
-&kp TAB  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 2 SPACE               &kp BACKSPACE           &lt 1 ENTER                               &kp LEFT_ALT
+&kp TAB  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 2 SPACE               &kp BACKSPACE           &lt 1 ENTER                               &kp LS(NUMBER_2)
             >;
 
             sensor-bindings = <&scroll_up_down>;
