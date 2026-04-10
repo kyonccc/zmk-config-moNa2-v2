@@ -104,9 +104,9 @@ layers:
   - F10
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB1'
-  - '&mkp MB2'
-  - '&mkp MB3'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F11
   - F12
@@ -132,13 +132,13 @@ layers:
   SCROLL_1:
   - {t: ▽, type: trans}
   - Ctl+Sft+TAB
-  - PRINTSCREEN
-  - Ctl+TAB
   - {t: ▽, type: trans}
+  - Ctl+TAB
   - {t: ▽, type: trans}
   - HOME
   - UP ARROW
   - END
+  - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - Gui+LEFT ARROW
@@ -146,22 +146,22 @@ layers:
   - Ctl+Gui+LEFT ARROW
   - Ctl+Gui+RIGHT ARROW
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - LEFT ARROW
   - DOWN ARROW
   - RIGHT ARROW
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LEFT SHIFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - Gui+Sft+LEFT ARROW
   - Gui+Sft+RIGHT ARROW
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - DELETE
   - PAGE UP
-  - PAGE DOWN
+  - {t: ▽, type: trans}
+  - PG DN
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
