@@ -68,6 +68,11 @@
     status = "okay";
     device = <&trackball_central>;
 
+// 【AML】トラックボールを動かした時の基本動作
+    input-processors = 
+        <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, // dtsiで眠っていたY軸反転をここで有効化
+        <&zip_temp_layer 5 2000>;                    // AML発動（レイヤー5、2秒間）
+
     scroller {
         layers = <3>;
         input-processors = 
@@ -78,4 +83,14 @@
             <&zip_scroll_scaler 1 5>;                           //スクロール量を1/4倍
     };
 
+};
+
+// 【ここを追加】AMLの細かい挙動設定
+&zip_temp_layer {
+    // マウスレイヤー内で「解除させたくないキー」の番号をカンマ区切りで書く
+    // 例：18, 19がマウスボタンならそこを押してもレイヤーが維持される
+    excluded-positions = <12 13 16 17 18>; 
+    
+    // キー入力直後の誤爆防止（150ms〜200msくらいがおすすめ）
+    require-prior-idle-ms = <150>;
 };
