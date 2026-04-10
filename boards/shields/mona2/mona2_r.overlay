@@ -70,8 +70,8 @@
 
 // 【AML】トラックボールを動かした時の基本動作
     input-processors = 
-        <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, // dtsiで眠っていたY軸反転をここで有効化
-        <&zip_temp_layer 5 10000>;                    // AML発動（レイヤー5、10秒間）
+        <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+        <&zip_temp_layer 5 5000>;                    // AML発動（レイヤー5、5秒間）
 
     scroller {
         layers = <3>;
