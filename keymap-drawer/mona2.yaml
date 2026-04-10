@@ -78,7 +78,7 @@ layers:
   - Gui+UP ARROW
   - Gui+DOWN ARROW
   - Sft+=
-  - {t: ▽, type: trans}
+  - INT1
   - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
