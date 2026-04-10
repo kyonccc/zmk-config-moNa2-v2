@@ -104,10 +104,10 @@
 
         layer_2 {
             bindings = <
-&kp F1   &kp F2   &kp F3   &kp F4   &kp F5                      &trans  &trans    &trans    &trans    &trans
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10             &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp F16    &trans  &trans  &trans    &trans    &trans    &trans
-&trans   &trans   &trans   &trans   &trans   &trans     &trans  &trans                                &trans
+&kp F1   &kp F2   &kp F3   &kp F4   &kp F5                      &trans  &trans  &trans  &trans  &trans
+&kp F6   &kp F7   &kp F8   &kp F9   &kp F10             &trans  &trans  &trans  &trans  &trans  &trans
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp F16    &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &trans   &trans   &trans   &trans   &trans     &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -115,9 +115,9 @@
 
         SCROLL_1 {
             bindings = <
-&trans  &kp LC(LS(TAB))     &kp PRINTSCREEN         &kp LC(TAB)              &trans                                     &trans  &kp HOME        &kp UP_ARROW    &kp END          &trans
-&trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)     &kp LC(LG(LEFT_ARROW))   &kp LC(LG(RIGHT_ARROW))            &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
-&trans  &kp LEFT_SHIFT      &kp LG(LS(LEFT_ARROW))  &kp LG(LS(RIGHT_ARROW))  &trans                   &trans    &trans  &trans  &kp DELETE      &kp PAGE_UP     &kp PAGE_DOWN    &trans
+&trans  &kp LC(LS(TAB))     &trans                  &kp LC(TAB)              &trans                                     &kp HOME        &kp UP_ARROW    &kp END          &trans  &trans
+&trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)     &kp LC(LG(LEFT_ARROW))   &kp LC(LG(RIGHT_ARROW))            &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans
+&trans  &trans              &kp LG(LS(LEFT_ARROW))  &kp LG(LS(RIGHT_ARROW))  &trans                   &trans    &trans  &kp PAGE_UP     &trans          &kp PG_DN        &trans  &trans
 &trans  &trans              &trans                  &trans                   &trans                   &trans    &trans  &trans                                                   &trans
             >;
 
