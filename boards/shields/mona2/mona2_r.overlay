@@ -91,5 +91,5 @@
     excluded-positions = <12 13 17 18 19>; 
     
     // キー入力直後の誤爆防止（150ms〜200msくらいがおすすめ）
-    require-prior-idle-ms = <120>;
+    require-prior-idle-ms = <80>;
 };
