@@ -1,20 +1,19 @@
-#include <input/processors.dtsi>
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors.dtsi>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 5
 #define SCROLL 6
 
-#include <input/processors.dtsi>
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
-
 // マウスボタン（mkp）を押した時も、MOUSEレイヤー(5番)の維持時間を5秒にリセットする設定
-
-&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 5000>; };
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer MOUSE 5000>;
+};
 
 &mt {
     flavor = "balanced";
