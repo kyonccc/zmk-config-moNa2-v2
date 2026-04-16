@@ -1,19 +1,18 @@
+#include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <input/processors.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/input_transform.h>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
-#include <input/processors.dtsi>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 5
 #define SCROLL 6
 
 // マウスボタン（mkp）を押した時も、MOUSEレイヤー(5番)の維持時間を5秒にリセットする設定
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer MOUSE 5000>;
-};
+
+&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 5000>; };
 
 &mt {
     flavor = "balanced";
@@ -37,6 +36,16 @@
         esc {
             bindings = <&kp ESC>;
             key-positions = <0 1>;
+        };
+
+        f3 {
+            bindings = <&kp F3>;
+            key-positions = <39 40>;
+        };
+
+        del {
+            bindings = <&kp DELETE>;
+            key-positions = <39 38>;
         };
     };
 
@@ -82,8 +91,8 @@
         default_layer {
             bindings = <
 &kp Q    &kp W         &kp E         &kp R           &kp T                                                               &kp Y        &kp U  &kp I      &kp O      &lt 3 P
-&kp A    &kp S         &kp D         &kp F           &kp G                                       &kp PRINTSCREEN         &kp H        &kp J  &kp K      &kp L      &kp PERIOD
-&kp Z    &kp X         &kp C         &kp V           &kp B             &to_layer_0 LANGUAGE_2    &to_layer_0 LANGUAGE_1  &kp N        &kp M  &kp COMMA  &kp MINUS  &kp SLASH
+&kp A    &kp S         &kp D         &kp F           &kp G                                       &kp PRINTSCREEN         &kp H        &kp J  &kp K      &kp L      &kp SLASH
+&kp Z    &kp X         &kp C         &kp V           &kp B             &to_layer_0 LANGUAGE_2    &to_layer_0 LANGUAGE_1  &kp N        &kp M  &kp COMMA  &kp MINUS  &kp PERIOD
 &kp TAB  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 2 SPACE               &kp BACKSPACE           &lt 1 ENTER                               &kp LBKT
             >;
 
@@ -95,7 +104,7 @@
 &kp EXCLAMATION   &kp QUESTION      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3                    &kp HOME        &kp UP_ARROW    &kp END          &kp RC(RS(TAB))     &kp RC(TAB)
 &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6            &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)
 &kp LS(NUMBER_6)  &kp SQT           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans    &trans  &kp PAGE_UP     &trans          &kp PAGE_DOWN    &kp LG(UP_ARROW)    &kp LG(DOWN_ARROW)
-&kp LS(EQUAL)     &kp INT1          &kp NUMBER_0  &trans        &trans        &trans    &trans  &trans                                                               &trans
+&kp LS(EQUAL)     &kp INT3          &kp NUMBER_0  &trans        &trans        &trans    &trans  &trans                                                               &trans
             >;
 
             sensor-bindings = <&scroll_right_left>;
@@ -128,7 +137,7 @@
 &bt BT_CLR_ALL  &trans  &trans  &trans  &bt BT_CLR                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans          &trans  &trans  &trans  &trans                &trans  &trans        &trans        &trans        &trans        &trans
 &trans          &trans  &trans  &trans  &trans      &trans    &trans  &trans        &trans        &trans        &trans        &trans
-&bootloader     &trans  &trans  &trans  &trans      &trans    &trans  &trans                                                  &trans
+&sys_reset      &trans  &trans  &trans  &trans      &trans    &trans  &trans                                                  &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -136,10 +145,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans    &trans    &trans                    &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &mkp MB4  &mkp MB5  &trans            &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&trans  &trans  &trans    &trans    &trans  &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans    &trans    &trans  &trans    &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans            &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans    &mkp MB4  &mkp MB5
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
