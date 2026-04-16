@@ -21,7 +21,7 @@ layers:
   - J
   - K
   - L
-  - .
+  - /
   - Z
   - X
   - C
@@ -33,7 +33,7 @@ layers:
   - M
   - ','
   - '-'
-  - /
+  - .
   - TAB
   - LEFT WIN
   - LEFT ALT
@@ -78,7 +78,7 @@ layers:
   - Gui+UP ARROW
   - Gui+DOWN ARROW
   - Sft+=
-  - INT1
+  - INT3
   - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -206,7 +206,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&bootloader'
+  - '&sys_reset'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -228,8 +228,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB4'
-  - '&mkp MB5'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -247,8 +247,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&mkp MB4'
+  - '&mkp MB5'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -306,3 +306,7 @@ combos:
   k: BLUETOOTH
 - p: [0, 1]
   k: ESC
+- p: [39, 40]
+  k: F3
+- p: [39, 38]
+  k: DELETE
