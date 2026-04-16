@@ -88,8 +88,11 @@
 // AMLの細かい挙動設定
 &zip_temp_layer {
     // マウスレイヤー内で「解除させたくないキー」
-    excluded-positions = <12 13 17 18 19>; 
+    excluded-positions = <17 18 19 31 32>; 
     
     // キー入力直後の誤爆防止（150ms〜200msくらいがおすすめ）
     require-prior-idle-ms = <80>;
+    
+    // 文字入力などの「対象外のキー」が押されたら、即座にレイヤー5を解除する
+    resubscribe-msgs = <INPUT_REL_X INPUT_REL_Y>; 
 };
