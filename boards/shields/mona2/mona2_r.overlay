@@ -92,7 +92,4 @@
     
     // キー入力直後の誤爆防止（150ms〜200msくらいがおすすめ）
     require-prior-idle-ms = <80>;
-    
-    // 文字入力などの「対象外のキー」が押されたら、即座にレイヤー5を解除する
-    resubscribe-msgs = <INPUT_REL_X INPUT_REL_Y>; 
 };
