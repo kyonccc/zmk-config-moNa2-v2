@@ -1,5 +1,14 @@
 #include "mona2.dtsi"
 
+/ {
+    vbatt {
+        compatible = "zmk,battery-voltage-divider";
+        label = "BATTERY";
+        full-ohlms = <4200>; // 100%の基準を4.2Vに指定
+        low-ohlms = <3300>;  // 0%の基準を3.3Vに指定
+    };
+};
+
 &kscan0 {
         col-gpios
             = <&xiao_d 10 GPIO_ACTIVE_HIGH>
