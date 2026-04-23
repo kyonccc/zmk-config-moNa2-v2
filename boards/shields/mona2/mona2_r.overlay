@@ -7,8 +7,8 @@
         compatible = "zmk,battery-voltage-divider";
         label = "BATTERY";
         /* Xiao BLEの内部回路(分圧比 1/2)を定義します */
-        full-ohms = <2100000>;   // 抵抗値合計 (例: 1M + 1M)
-        output-ohms = <1000000>; // 測定ポイントの抵抗値
+        full-ohms = <2100000>;   // 2.1M相当
+        output-ohms = <1000000>; // 1.0M相当
     };
 };
 
