@@ -2,6 +2,17 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
+/ {
+    /* バッテリーの100%と0%の電圧範囲を定義 */
+    /* ZMKはこの値を参照してパーセンテージを計算します */
+    vbatt {
+        compatible = "zmk,battery-voltage-divider";
+        label = "BATTERY";
+        full-ohlms = <4200>; // 100% = 4.2V
+        low-ohlms = <3300>;  // 0% = 3.3V (電池保護のため少し高め)
+    };
+};
+
 &default_transform {
     col-offset = <6>;
 };
