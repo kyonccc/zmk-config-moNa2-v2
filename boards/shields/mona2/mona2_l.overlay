@@ -1,11 +1,12 @@
 #include "mona2.dtsi"
 
 / {
-    vbatt {
+    vbatt: vbatt {
         compatible = "zmk,battery-voltage-divider";
         label = "BATTERY";
-        full-mv = <4200>; // 100% = 4.2V
-        low-mv = <3300>;  // 0% = 3.3V (電池保護のため少し高め)
+        /* Xiao BLEの内部回路(分圧比 1/2)を定義します */
+        full-ohms = <2000000>;   // 抵抗値合計 (例: 1M + 1M)
+        output-ohms = <1000000>; // 測定ポイントの抵抗値
     };
 };
 
