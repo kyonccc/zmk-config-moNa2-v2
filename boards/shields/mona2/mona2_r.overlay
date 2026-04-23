@@ -3,8 +3,6 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 / {
-    /* バッテリーの100%と0%の電圧範囲を定義 */
-    /* ZMKはこの値を参照してパーセンテージを計算します */
     vbatt {
         compatible = "zmk,battery-voltage-divider";
         label = "BATTERY";
