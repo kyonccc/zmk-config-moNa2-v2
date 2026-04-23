@@ -4,8 +4,8 @@
     vbatt {
         compatible = "zmk,battery-voltage-divider";
         label = "BATTERY";
-        full-ohlms = <4200>; // 100%の基準を4.2Vに指定
-        low-ohlms = <3300>;  // 0%の基準を3.3Vに指定
+        full-ohms = <4200>; // 100% = 4.2V
+        low-ohms = <3300>;  // 0% = 3.3V (電池保護のため少し高め)
     };
 };
 
