@@ -2,6 +2,19 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
+/ {
+    vbatt: vbatt {
+        compatible = "zmk,battery-voltage-divider";
+        label = "BATTERY";
+        /* 電圧測定ピン指定 */
+        io-channels = <&adc 7>; 
+        
+        /* 100%表示にするための調整数値 */
+        full-ohms = <1880000>;  
+        output-ohms = <1000000>;
+    };
+};
+
 &default_transform {
     col-offset = <6>;
 };
