@@ -6,6 +6,7 @@
     vbatt: vbatt {
         compatible = "zmk,battery-voltage-divider";
         label = "BATTERY";
+        io-channels = <&adc 7>;
         /* Xiao BLEの内部回路(分圧比 1/2)を定義します */
         full-ohms = <2000000>;   // 2.2M相当
         output-ohms = <1000000>; // 1.0M相当
