@@ -1,14 +1,17 @@
 #include "mona2.dtsi"
 
 / {
-    vbatt: vbatt {
+    chosen {
+        zmk,battery = &vbatt;
+    };
+
+    vbatt: battery_divider {
         compatible = "zmk,battery-voltage-divider";
         label = "BATTERY";
-        /* 電圧測定ピン指定 */
+        /* ADC全体を参照 */
         io-channels = <&adc 7>; 
-        
-        /* 100%表示にするための調整数値 */
-        full-ohms = <1880000>;  
+        /* 2. バッテリーの表示100%調整用計算式 */
+        full-ohms = <1880000>;
         output-ohms = <1000000>;
     };
 };
