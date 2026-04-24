@@ -1,5 +1,23 @@
 #include "mona2.dtsi"
 
+/ {
+    chosen {
+        zmk,battery = &vbatt_custom;
+    };
+};
+
+&adc {
+    status = "okay";
+};
+
+&vbatt_custom {
+    status = "okay";
+    compatible = "zmk,battery-voltage-divider";
+    io-channels = <&adc 7>;
+    full-ohms = <1880000>;
+    output-ohms = <1000000>;
+};
+
 &kscan0 {
         col-gpios
             = <&xiao_d 10 GPIO_ACTIVE_HIGH>
