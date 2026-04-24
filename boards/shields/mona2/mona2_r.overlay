@@ -2,27 +2,6 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
-/ {
-    /* 1. chosen で自作ノードを指定 */
-    chosen {
-        zmk,battery = &vbatt_custom;
-    };
-
-    /* 2. ノードの本体を定義 */
-    vbatt_custom: battery_divider {
-        compatible = "zmk,battery-voltage-divider";
-        label = "BATTERY";
-        io-channels = <&adc 7>; 
-        full-ohms = <1880000>;
-        output-ohms = <1000000>;
-    };
-};
-
-/* 3. ADC本体を有効化 */
-&adc {
-    status = "okay";
-};
-
 &default_transform {
     col-offset = <6>;
 };
