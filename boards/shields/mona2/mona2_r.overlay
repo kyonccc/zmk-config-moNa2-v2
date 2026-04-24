@@ -4,10 +4,10 @@
 
 / {
     chosen {
-        zmk,battery = &vbatt;
+        zmk,battery = &vbatt_custom;
     };
 
-    vbatt: battery_divider {
+    vbatt_custom: battery_divider {
         compatible = "zmk,battery-voltage-divider";
         label = "BATTERY";
         /* ADC全体を参照 */
