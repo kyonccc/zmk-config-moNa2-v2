@@ -2,6 +2,24 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
+/ {
+    chosen {
+        zmk,battery = &vbatt_custom;
+    };
+};
+
+&adc {
+    status = "okay";
+};
+
+&vbatt_custom {
+    status = "okay";
+    compatible = "zmk,battery-voltage-divider";
+    io-channels = <&adc 7>;
+    full-ohms = <1880000>;
+    output-ohms = <1000000>;
+};
+
 &default_transform {
     col-offset = <6>;
 };
