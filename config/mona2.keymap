@@ -7,26 +7,24 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-#define MOUSE 5
-#define SCROLL 6
 
-// マウスボタン（mkp）を押した時も、MOUSEレイヤー(5番)の維持時間を5秒にリセットする設定
-
+// MOUSEレイヤーの維持時間を5秒にリセットする設定
 &mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 5000>; };
 
 &mt {
     flavor = "balanced";
-    quick-tap-ms = <0>;
+    quick-tap-ms = <175>;
 };
 
 &lt {
-    quick-tap-ms = <300>;
+    quick-tap-ms = <175>;
     flavor = "balanced";
 };
 
 / {
     combos {
         compatible = "zmk,combos";
+        combo_timeout_ms = <30>;
 
         bluetooth {
             bindings = <&mo 4>;
@@ -89,6 +87,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
+            label = "DEFAULT";
             bindings = <
 &kp Q    &kp W         &kp E         &kp R           &kp T                                                               &kp Y        &kp U  &kp I      &kp O      &lt 3 P
 &kp A    &kp S         &kp D         &kp F           &kp G                                       &kp PRINTSCREEN         &kp H        &kp J  &kp K      &kp L      &kp SLASH
@@ -100,6 +99,7 @@
         };
 
         layer_1 {
+            label = "LOWER";
             bindings = <
 &kp EXCLAMATION   &kp QUESTION      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3                    &kp HOME        &kp UP_ARROW    &kp END          &kp RC(RS(TAB))     &kp RC(TAB)
 &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6            &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)
@@ -111,6 +111,7 @@
         };
 
         layer_2 {
+            label = "RAISE";
             bindings = <
 &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                      &trans  &trans  &trans  &trans  &trans
 &kp F6   &kp F7   &kp F8   &kp F9   &kp F10             &trans  &trans  &trans  &trans  &trans  &trans
@@ -121,7 +122,8 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        SCROLL_1 {
+        layer_3 {
+            label = "SCROLL";
             bindings = <
 &trans  &trans              &kp LC(LS(TAB))         &kp LC(TAB)              &trans                                     &kp HOME        &kp UP_ARROW    &kp END          &trans  &trans
 &trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)     &kp LC(LG(LEFT_ARROW))   &kp LC(LG(RIGHT_ARROW))            &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans
@@ -132,7 +134,8 @@
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
-        BLUETOOTH {
+        layer_4 {
+            label = "BT";
             bindings = <
 &bt BT_CLR_ALL  &trans  &trans  &trans  &bt BT_CLR                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans          &trans  &trans  &trans  &trans                &trans  &trans        &trans        &trans        &trans        &trans
@@ -143,23 +146,13 @@
             sensor-bindings = <&scroll_up_down>;
         };
 
-        MOUSE {
+        layer_5 {
+            label = "MOUSE";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans            &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans    &mkp MB4  &mkp MB5
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                &trans
-            >;
-
-            sensor-bindings = <&scroll_up_down>;
-        };
-
-        SCROLL_2 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
