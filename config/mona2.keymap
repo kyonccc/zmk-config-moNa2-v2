@@ -14,7 +14,7 @@
 
 &vbatt {
     compatible = "zmk,battery-voltage-divider";
-    io-channels = <&adc 7>; 
+    io-channels = <&adc 14>; 
     full-ohms = <1880000>;
     output-ohms = <1000000>;
 };
