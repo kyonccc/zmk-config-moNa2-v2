@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: mona2}
 layers:
-  default:
+  DEFAULT:
   - Q
   - W
   - E
@@ -10,7 +10,7 @@ layers:
   - U
   - I
   - O
-  - {t: P, h: SCROLL_1}
+  - {t: P, h: SCROLL}
   - A
   - S
   - D
@@ -39,11 +39,11 @@ layers:
   - LEFT ALT
   - LEFT SHIFT
   - LEFT CONTROL
-  - {t: SPACE, h: '2'}
+  - {t: SPACE, h: RAISE}
   - BACKSPACE
-  - {t: ENTER, h: '1'}
+  - {t: ENTER, h: LOWER}
   - '['
-  '1':
+  LOWER:
   - '!'
   - '?'
   - '1'
@@ -86,7 +86,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  '2':
+  RAISE:
   - F1
   - F2
   - F3
@@ -129,7 +129,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  SCROLL_1:
+  SCROLL:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+Sft+TAB
@@ -172,7 +172,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  BLUETOOTH:
+  BT:
   - BT CLR ALL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -215,7 +215,7 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  '5':
+  MOUSE:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -258,52 +258,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  SCROLL_2:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
 combos:
 - p: [27, 40]
-  k: BLUETOOTH
+  k: BT
 - p: [0, 1]
   k: ESC
 - p: [39, 40]
