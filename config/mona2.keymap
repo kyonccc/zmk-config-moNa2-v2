@@ -6,23 +6,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-/ {
-    chosen {
-        zmk,battery = &vbatt;
-    };
-};
-
-&vbatt {
-    compatible = "zmk,battery-voltage-divider";
-    io-channels = <&adc 7>; 
-    full-ohms = <2000000>;
-    output-ohms = <1000000>;
-};
-
-&adc {
-    status = "okay";
-};
-
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 5
 #define SCROLL 6
