@@ -1,5 +1,18 @@
 #include "mona2.dtsi"
 
+/ {
+    vbatt: vbatt {
+        compatible = "zmk,battery-voltage-divider";
+        label = "BATTERY";
+        /* 電圧測定ピン指定 */
+        io-channels = <&adc 7>; 
+        
+        /* 100%表示にするための調整数値 */
+        full-ohms = <1880000>;  
+        output-ohms = <1000000>;
+    };
+};
+
 &kscan0 {
         col-gpios
             = <&xiao_d 10 GPIO_ACTIVE_HIGH>
