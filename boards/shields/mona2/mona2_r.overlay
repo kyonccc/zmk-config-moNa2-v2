@@ -10,7 +10,9 @@
     vbatt: battery_divider {
         compatible = "zmk,battery-voltage-divider";
         label = "BATTERY";
+        /* ADC全体を参照 */
         io-channels = <&adc 7>; 
+        /* 2. バッテリーの表示100%調整用計算式 */
         full-ohms = <1880000>;
         output-ohms = <1000000>;
     };
