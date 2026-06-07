@@ -2,8 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: sayu-hub
-      url-base: https://github.com/sayu-hub
+    - name: cormoran     # <-- DYA Studioのコア開発者リモートを追加
+      url-base: https://github.com/cormoran
     - name: badjeff    # <-- PMW3610
       url-base: https://github.com/badjeff
     # - name: sekigon-gonnoc  # <-- PAW3222
@@ -14,20 +14,30 @@ manifest:
       url-base: https://github.com/zettaface
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: v0.3-branch
+      remote: cormoran            # <-- cormoran氏のカスタムZMKを指定
+      revision: v0.3-branch+dya  # <-- DYA対応の専用ブランチ
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: zmk-0.3
-    # - name: zmk-driver-paw3222
-    #   remote: sekigon-gonnoc
-    #   revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3-branch
     - name: zmk-input-processor-keybind
       remote: zettaface
+      revision: main
+    # ↓ DYA Studioの動作に必須となるcormoran氏の専用拡張モジュール群を追加
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
       revision: main
   self:
     path: config
