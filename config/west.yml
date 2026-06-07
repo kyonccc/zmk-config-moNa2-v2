@@ -2,11 +2,11 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: badjeff    # <-- PMW3610
+    - name: badjeff    # <-- PMW3610のドライバとオーバーレイの整合性を維持
       url-base: https://github.com/badjeff
-    - name: caksoylar  # <-- RGB LED
+    - name: caksoylar  # <-- 既存のLEDインジケータ通知との同期
       url-base: https://github.com/caksoylar
-    - name: zettaface  # <-- Input Processor Keybind
+    - name: zettaface  # <-- キーバインドプロセッサの維持
       url-base: https://github.com/zettaface
   projects:
     - name: zmk
