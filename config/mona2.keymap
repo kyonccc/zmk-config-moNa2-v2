@@ -9,18 +9,15 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 // ==========================================
-// ✨ オートマウスレイヤー＆エディター最適化ガジェット
+// ✨ オートマウスレイヤー＆外部ツール完全互換設定
 // ==========================================
+// WebエディターやDrawジョブが読み込む時は、標準命令に置き換えてエラーを回避します
 #if defined(KEYMAP_DRAWER) || defined(ZMK_KEYMAP_EDITOR)
-    // エディターやDrawツールには「ただのレイヤーON（&mo）」に見せかけてエラーを回避
-    #define AUTO_MOUSE_LISTENER &mo 5
+    &mkp_input_listener { input-processors = <&mo 5>; };
 #else
-    // 実際のキーボードに書き込む時は、本来の「5秒維持する自動切り替え」を適用
-    #define AUTO_MOUSE_LISTENER &zip_temp_layer 5 5000
+    // 実際のキーボードビルド時は、本来の「5秒維持する自動切り替え」を適用します
+    &mkp_input_listener { input-processors = <&zip_temp_layer 5 5000>; };
 #endif
-
-// ハードウェア側のリスナーに最適化したマクロを流し込む
-&mkp_input_listener { input-processors = <AUTO_MOUSE_LISTENER>; };
 // ==========================================
 
 &mt {
@@ -78,21 +75,18 @@
             tapping-term-ms = <200>;
         };
 
+        // 最新ZMKの仕様に合わせ、内部の不要なタイマーパラメーターをクリーンアップ
         scroll_up_down: mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-            tap-ms = <20>;
         };
 
         scroll_right_left: mouse_wheel_right_left {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
-
-            tap-ms = <20>;
-        </ul>
+        };
     };
 
     keymap {
