@@ -8,8 +8,20 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
-// トラックボールによる自動MOUSEレイヤー切り替え（5秒維持）
-&mkp_input_listener { input-processors = <&zip_temp_layer 5 5000>; };
+// ==========================================
+// ✨ オートマウスレイヤー＆エディター最適化ガジェット
+// ==========================================
+#if defined(KEYMAP_DRAWER) || defined(ZMK_KEYMAP_EDITOR)
+    // エディターやDrawツールには「ただのレイヤーON（&mo）」に見せかけてエラーを回避
+    #define AUTO_MOUSE_LISTENER &mo 5
+#else
+    // 実際のキーボードに書き込む時は、本来の「5秒維持する自動切り替え」を適用
+    #define AUTO_MOUSE_LISTENER &zip_temp_layer 5 5000
+#endif
+
+// ハードウェア側のリスナーに最適化したマクロを流し込む
+&mkp_input_listener { input-processors = <AUTO_MOUSE_LISTENER>; };
+// ==========================================
 
 &mt {
     flavor = "balanced";
@@ -80,7 +92,7 @@
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
 
             tap-ms = <20>;
-        };
+        </ul>
     };
 
     keymap {
