@@ -14,10 +14,10 @@ manifest:
       url-base: https://github.com/zettaface
   projects:
     - name: zmk
-      remote: sayu-hub          # <-- 本家から sayu-hub 氏の DYA対応フォークに変更
-      revision: zmk-studio-beta # <-- 記事を参考に、DYA studio（ZMK Studio）対応ブランチを指定
+      remote: zmkfirmware
+      revision: v0.3-branch
       import: app/west.yml
-    - name: zmk-pmw3610-driver  # <-- 大切なトラックボールドライバーを維持
+    - name: zmk-pmw3610-driver
       remote: badjeff
       revision: zmk-0.3
     # - name: zmk-driver-paw3222
