@@ -7,12 +7,9 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // ==========================================
-// ↓ DYA Studio (ZMK Studio) 用のインクルード（追加）
+// ↓ DYA Studio (ZMK Studio) 用のコアインクルードのみに絞り込み
 // ==========================================
 #include <dt-bindings/zmk/studio.h>
-#include <input/processors/runtime-input-processor.dtsi>
-#include <behaviors/runtime-sensor-rotate.dtsi>
-#include <behaviors/battery_history_request.dtsi>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
