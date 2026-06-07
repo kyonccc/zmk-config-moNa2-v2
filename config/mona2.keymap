@@ -6,11 +6,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-// ==========================================
-// ↓ DYA Studio (ZMK Studio) 用のコアインクルードのみに絞り込み
-// ==========================================
-#include <dt-bindings/zmk/studio.h>
-
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 // MOUSEレイヤーの維持時間を5秒にリセットする設定
