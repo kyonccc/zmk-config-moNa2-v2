@@ -12,14 +12,19 @@
 // ✨ オートマウスレイヤー＆外部ツール完全互換設定
 // ==========================================
 // WebエディターやDrawジョブが読み込む時は、右手用の特殊ノードを隠してパースエラーを回避します
+
 #if defined(KEYMAP_DRAWER) || defined(ZMK_KEYMAP_EDITOR)
     // エディタ閲覧・編集時はここが適用されます（ダミー領域）
 #else
-    // 実際のキーボードビルド時は、右手overlayで定義した本物のリスナーに自動切り替えを適用します
-    &trackball_central_listener {
-        input-processors = <&zip_temp_layer 5 5000>; // トラックボールを動かすと5秒間レイヤー5（MOUSE）を維持
-    };
+
+// 実際のキーボードビルド時は、右手overlayで定義した本物のリスナーに自動切り替えを適用します
+
+&trackball_central_listener {
+    input-processors = <&zip_temp_layer 5 5000>; // トラックボールを動かすと5秒間レイヤー5（MOUSE）を維持
+};
+
 #endif
+
 // ==========================================
 
 &mt {
@@ -45,11 +50,6 @@
         esc {
             bindings = <&kp ESC>;
             key-positions = <0 1>;
-        };
-
-        f3 {
-            bindings = <&kp F3>;
-            key-positions = <39 40>;
         };
 
         del {
@@ -78,6 +78,7 @@
         };
 
         // ロータリーエンコーダー（ホイール）用スクロール挙動定義
+
         scroll_up_down: mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -97,13 +98,14 @@
         // --------------------------------------------------------------------------
         // レイヤー 0: デフォルトキーマップ (JIS/英数・かな両対応仕様)
         // --------------------------------------------------------------------------
+
         default_layer {
             label = "DEFAULT";
             bindings = <
-&kp Q    &kp W         &kp E         &kp R           &kp T                                                                                     &kp Y        &kp U  &kp I      &kp O      &lt 3 P
-&kp A    &kp S         &kp D         &kp F           &kp G                                                       &kp PRINTSCREEN               &kp H        &kp J  &kp K      &kp L      &kp SLASH
-&kp Z    &kp X         &kp C         &kp V           &kp B             &to_layer_0 LANG2         &to_layer_0 LANG1   &kp N        &kp M  &kp COMMA  &kp MINUS  &kp PERIOD
-&kp TAB  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 2 SPACE               &kp BACKSPACE       &lt 1 ENTER                               &kp LBKT
+&kp Q    &kp W         &kp E         &kp R           &kp T                                                     &kp Y        &kp U  &kp I      &kp O      &lt 3 P
+&kp A    &kp S         &kp D         &kp F           &kp G                                  &kp PRINTSCREEN    &kp H        &kp J  &kp K      &kp L      &kp SLASH
+&kp Z    &kp X         &kp C         &kp V           &kp B             &to_layer_0 LANG2    &to_layer_0 LANG1  &kp N        &kp M  &kp COMMA  &kp MINUS  &kp PERIOD
+&kp TAB  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 2 SPACE          &kp BACKSPACE      &lt 1 ENTER                               &kp LBKT
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -112,13 +114,14 @@
         // --------------------------------------------------------------------------
         // レイヤー 1: LOWER (テンキー・移動系レイヤー)
         // --------------------------------------------------------------------------
+
         layer_1 {
             label = "LOWER";
             bindings = <
-&kp EXCLAMATION   &kp QUESTION      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3                                                                   &kp HOME        &kp UP_ARROW    &kp END          &kp RC(RS(TAB))     &kp RC(TAB)
-&kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6                    &trans         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)
+&kp EXCLAMATION   &kp QUESTION      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3                    &kp HOME        &kp UP_ARROW    &kp END          &kp RC(RS(TAB))     &kp RC(TAB)
+&kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6            &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)
 &kp LS(NUMBER_6)  &kp SQT           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans    &trans  &kp PAGE_UP     &trans          &kp PAGE_DOWN    &kp LG(UP_ARROW)    &kp LG(DOWN_ARROW)
-&kp LS(EQUAL)     &kp INT3          &kp NUMBER_0  &trans        &trans        &trans    &trans  &trans                                                           &trans
+&kp LS(EQUAL)     &kp INT3          &kp NUMBER_0  &trans        &trans        &trans    &trans  &trans                                                               &trans
             >;
 
             sensor-bindings = <&scroll_right_left>;
@@ -127,13 +130,14 @@
         // --------------------------------------------------------------------------
         // レイヤー 2: RAISE (ファンクションキー レイヤー)
         // --------------------------------------------------------------------------
+
         layer_2 {
             label = "RAISE";
             bindings = <
-&kp F1   &kp F2   &kp F3   &kp F4   &kp F5                                                                     &trans  &trans  &trans  &trans  &trans
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10                                                    &trans  &trans  &trans  &trans  &trans  &trans
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp F16                                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans   &trans   &trans   &trans   &trans   &trans                                    &trans  &trans                  &trans
+&kp F1   &kp F2   &kp F3  &kp F4  &kp F5                    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&kp F11  &kp F12  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &trans   &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &trans   &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -143,13 +147,14 @@
         // レイヤー 3: SCROLL (トラックボールをホイール化・ウインドウ操作レイヤー)
         // 🛈 右手側のキー数を12個に綺麗に修正し、コンパイルエラーを解決しました
         // --------------------------------------------------------------------------
+
         layer_3 {
             label = "SCROLL";
             bindings = <
-&trans  &trans              &kp LC(LS(TAB))         &kp LC(TAB)              &trans                                                                     &kp HOME        &kp UP_ARROW    &kp END          &trans  &trans
-&trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)     &kp LC(LG(LEFT_ARROW))   &kp LC(LG(RIGHT_ARROW))                                            &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans
-&trans  &trans              &kp LG(LS(LEFT_ARROW))  &kp LG(LS(RIGHT_ARROW))  &trans                    &trans    &trans  &trans          &kp PAGE_UP     &trans          &kp PG_DN       &trans           &trans
-&trans  &trans              &trans                  &trans                   &trans                    &trans    &trans  &trans                                                           &trans
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -159,13 +164,14 @@
         // レイヤー 4: BT (Bluetooth・ペアリング管理レイヤー)
         // 🛈 4行目の不足していたキー数を「&trans」で補い、ジャスト42キーにアジャストしました
         // --------------------------------------------------------------------------
+
         layer_4 {
             label = "BT";
             bindings = <
-&bt BT_CLR_ALL  &trans  &trans  &trans  &bt BT_CLR                                                     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans          &trans  &trans  &trans  &trans                                         &trans  &trans  &trans        &trans        &trans        &trans
-&trans          &trans  &trans  &trans  &trans      &trans                     &trans  &trans  &trans        &trans        &trans        &trans        &trans
-&sys_reset      &trans  &trans  &trans  &trans      &trans                     &trans  &trans                                            &trans
+&bt BT_CLR_ALL  &trans      &trans  &trans  &bt BT_CLR                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans          &trans      &trans  &trans  &trans                &trans  &trans        &trans        &trans        &trans        &trans
+&trans          &trans      &trans  &trans  &trans      &trans    &trans  &trans        &trans        &trans        &trans        &trans
+&trans          &sys_reset  &trans  &trans  &trans      &trans    &trans  &trans                                                  &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -174,13 +180,14 @@
         // --------------------------------------------------------------------------
         // レイヤー 5: MOUSE (オートマウス発動時のマウスボタン配備レイヤー)
         // --------------------------------------------------------------------------
+
         layer_5 {
             label = "MOUSE";
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                                                 &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans                                                 &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                 &trans  &trans  &trans  &trans    &mkp MB4  &mkp MB5
-&trans  &trans  &trans  &trans  &trans  &trans                                 &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                      &trans    &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans            &trans    &trans    &mkp MB1  &mkp MB2  &mkp MB3  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mkp MB4  &mkp MB5  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans                                  &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
