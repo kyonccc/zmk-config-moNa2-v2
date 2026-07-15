@@ -65,6 +65,21 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        PASS: PASS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp NUMBER_8>,
+                <&macro_tap>,
+                <&kp NUMBER_7>,
+                <&macro_tap>,
+                <&kp NUMBER_9>,
+                <&macro_tap>,
+                <&kp NUMBER_3>;
+
+            label = "PASS";
+        };
     };
 
     behaviors {
@@ -119,7 +134,7 @@
             label = "LOWER";
             bindings = <
 &kp EXCLAMATION   &kp QUESTION      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3                    &kp HOME        &kp UP_ARROW    &kp END          &kp RC(RS(TAB))     &kp RC(TAB)
-&kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6            &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)
+&kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6            &PASS   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LG(LEFT_ARROW)  &kp LG(RIGHT_ARROW)
 &kp LS(NUMBER_6)  &kp SQT           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans    &trans  &kp PAGE_UP     &trans          &kp PAGE_DOWN    &kp LG(UP_ARROW)    &kp LG(DOWN_ARROW)
 &kp LS(EQUAL)     &kp INT3          &kp NUMBER_0  &trans        &trans        &trans    &trans  &trans                                                               &trans
             >;
