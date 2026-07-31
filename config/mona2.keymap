@@ -123,7 +123,7 @@
 &kp TAB        &kp LEFT_WIN   &kp LEFT_ALT   &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 2 SPACE          &kp BACKSPACE      &lt 1 ENTER                                                         &to_layer_0 PRINTSCREEN
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
         // --------------------------------------------------------------------------
@@ -172,7 +172,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
         // --------------------------------------------------------------------------
