@@ -123,7 +123,7 @@
 &kp TAB        &kp LEFT_WIN   &kp LEFT_ALT   &kp LEFT_SHIFT  &kp LEFT_CONTROL  &lt 2 SPACE          &kp BACKSPACE      &lt 1 ENTER                                                         &to_layer_0 PRINTSCREEN
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         // --------------------------------------------------------------------------
@@ -139,7 +139,7 @@
 &kp LS(EQUAL)     &kp INT3          &kp NUMBER_0  &trans        &trans        &trans    &trans  &trans                                                               &trans
             >;
 
-            sensor-bindings = <&scroll_right_left>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         // --------------------------------------------------------------------------
@@ -172,7 +172,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         // --------------------------------------------------------------------------
